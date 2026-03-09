@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Next.js
+client/.next/
+client/out/
+
+# Hardhat / Web3
+backend/artifacts/
+backend/cache/
+backend/typechain-types/
+
+# Environment Variables (Security)
+.env
+.env.local
+
+# OS Files
+.DS_Store
