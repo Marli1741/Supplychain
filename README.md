@@ -1,6 +1,6 @@
 # Web3 Pharmaceutical Supply Chain (Hybrid DApp)
 
-A production-ready, decentralized application (DApp) that tracks the lifecycle of pharmaceutical products from raw materials to final sale. 
+A decentralised application (DApp) that tracks the lifecycle of products from raw materials to final sale. 
 
 This project goes beyond a standard blockchain ledger by integrating **Hybrid Hardware Geolocation**, pulling live device GPS coordinates into the Ethereum blockchain to bridge the gap between physical logistics and digital state machines.
 
@@ -8,11 +8,10 @@ This project goes beyond a standard blockchain ledger by integrating **Hybrid Ha
 
 ### 1. Core Blockchain Logic & Security
 * **Strict Role-Based Access Control (RBAC):** Cryptographically enforces supply chain roles. The smart contract actively checks the MetaMask wallet address and blocks execution if the user isn't officially registered by the Admin for that specific job (e.g., a Manufacturer cannot execute a Distributor's function).
-* **Chronological State Machine:** Built a rigid tracking pipeline (`Init -> RMS -> Manufacture -> Distribute -> Retail -> Sold`). Transactions attempting to skip steps or execute out of order are automatically reverted by the Smart Contract.
+* **Chronological State Machine:** Built a rigid tracking pipeline (`Admin -> RMS -> Manufacture -> Distribute -> Retail -> Sold`). Transactions attempting to skip steps or execute out of order are automatically reverted by the Smart Contract.
 
 ### 2. Hybrid Hardware Integration
 * **Live Device Geolocation:** Integrates with physical hardware (`navigator.geolocation`) to pull real-world Latitude and Longitude coordinates during supply chain handoffs.
-* **On-Chain GPS Anchoring:** Physical coordinates are permanently burned into the Ethereum blockchain ledger at every stage of the supply chain.
 * **Dynamic Live Mapping:** The tracking page reads on-chain coordinates and dynamically generates a clickable link that drops a pin directly onto Google Maps.
 
 ### 3. Gas-Optimized Frontend Engineering
@@ -40,7 +39,7 @@ npx hardhat run scripts/deploy.ts --network localhost
 
 ### 3. Launch the Frontend
 Open a *third* terminal in the `client` folder and start the Next.js development server:
-npm run dev
+npm run dev -- --webpack
 *(Navigate to `http://localhost:3000` in your browser.)*
 
 ## Testing the Supply Chain
