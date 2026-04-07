@@ -43,7 +43,7 @@ Open a *third* terminal in the `client` folder and start the Next.js development
 npm run dev
 *(Navigate to `http://localhost:3000` in your browser.)*
 
-## 🎬 Testing the Supply Chain
+## Testing the Supply Chain
 
 1. Connect MetaMask to **Account 0** (The Admin).
 2. Go to **Register Roles** and authorize Accounts 1 through 4.
